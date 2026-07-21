@@ -1,0 +1,170 @@
+:root {
+  --ink: #1b2a4a;
+  --ink-soft: #3a4a70;
+  --parchment: #faf6ec;
+  --paper: #ffffff;
+  --verdigris: #2f6f5e;
+  --verdigris-dark: #234f43;
+  --brass: #b08d57;
+  --charcoal: #23262b;
+  --rule: #e4dcc8;
+  --danger: #a8402f;
+
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--parchment);
+  background-image:
+    linear-gradient(var(--rule) 1px, transparent 1px);
+  background-size: 100% 2.1rem;
+  background-position: 0 6.5rem;
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--verdigris);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 1.75rem clamp(1.25rem, 5vw, 3rem) 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.app-header__mark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.app-header__mark span {
+  color: var(--verdigris);
+}
+
+.app-header__tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1rem clamp(1.25rem, 5vw, 3rem) 4rem;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+/* ---- Deed card shell (shared by Home / Result / NotFound) ---- */
+
+.deed {
+  width: 100%;
+  max-width: 640px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(27, 42, 74, 0.04), 0 12px 32px -18px rgba(27, 42, 74, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.deed::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--rule);
+  pointer-events: none;
+}
+
+.deed__header {
+  padding: 2rem 2.25rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.deed__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.deed__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+}
+
+.deed__subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.deed__body {
+  padding: 1.75rem 2.25rem 2.25rem;
+}

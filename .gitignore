@@ -1,0 +1,71 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Environment Variables
+.env
+.env.*
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# OS
+# =========================
+Thumbs.db
+.DS_Store
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Python cache
+# =========================
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Node
+# =========================
+frontend/node_modules/
+
+# =========================
+# Build
+# =========================
+dist/
+build/
+
+# =========================
+# Dataset
+# =========================
+notebooks/data/
+
+# =========================
+# Trained Models
+# =========================
+backend/models/*.pkl
+notebooks/*.pkl
+
+# locations.json
+!backend/models/locations.json
+!notebooks/locations.json
+
+backend/models/*.pkl

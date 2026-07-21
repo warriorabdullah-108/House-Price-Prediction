@@ -1,0 +1,144 @@
+.pf {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.pf__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 520px) {
+  .pf__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pf__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pf__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.pf__label sup {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.pf__control {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  padding: 0.62rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--parchment);
+  color: var(--charcoal);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+select.pf__control {
+  font-family: var(--font-body);
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%),
+    linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.2rem;
+}
+
+.pf__control:hover {
+  border-color: var(--ink-soft);
+}
+
+.pf__control:focus {
+  border-color: var(--verdigris);
+  background: var(--paper);
+}
+
+.pf__control[aria-invalid="true"] {
+  border-color: var(--danger);
+  background: #fbf1ee;
+}
+
+.pf__error {
+  font-size: 0.78rem;
+  color: var(--danger);
+  min-height: 1.1em;
+}
+
+.pf__hint {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.pf__divider {
+  border: none;
+  border-top: 1px dashed var(--rule);
+  margin: 0.25rem 0;
+}
+
+.pf__banner {
+  border: 1px solid var(--danger);
+  background: #fbf1ee;
+  color: var(--danger);
+  border-radius: 3px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.pf__submit {
+  margin-top: 0.25rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: var(--paper);
+  background: var(--verdigris);
+  border: none;
+  border-radius: 3px;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.pf__submit:hover:not(:disabled) {
+  background: var(--verdigris-dark);
+}
+
+.pf__submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.pf__submit:disabled {
+  background: #9db3ac;
+  cursor: not-allowed;
+}
+
+.pf__spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  animation: pf-spin 0.7s linear infinite;
+}
+
+@keyframes pf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
