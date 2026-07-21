@@ -28,7 +28,6 @@ export default function ResultPage() {
   return (
     <div className="deed">
       <div className="deed__header">
-        <span className="deed__eyebrow">Estimate No. 01 — Assessed</span>
         <h1 className="deed__title">Here's the estimate</h1>
         <p className="deed__subtitle">
           Based on the details you entered, the model's best estimate of market value is shown

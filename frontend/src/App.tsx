@@ -7,10 +7,9 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <Link className="app-header__mark" to="/">
-          Sthaan<span>.</span>
-        </Link>
-        <span className="app-header__tag">House price estimator</span>
+          <Link className="app-header__mark" to="/">
+        <span className="app-header__tag">🏠House price estimator</span>
+          </Link>
       </header>
 
       <main className="app-main">
