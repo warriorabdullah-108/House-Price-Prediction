@@ -1,0 +1,17 @@
+:root {
+  --hero-bg: #637381; /* أو #5a6e85 */
+  --bg-main: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-dark: #1c252e;
+  --text-muted: #637381;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
