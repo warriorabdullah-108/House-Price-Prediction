@@ -420,8 +420,7 @@ Example Response
 
 GitHub Repository
 
-https://github.com/warriorabdullah-108/Test-Team
-
+https://github.com/warriorabdullah-108/House-Price-Prediction
 ---
 
 # License
