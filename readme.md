@@ -368,7 +368,7 @@ Example Response
 # Screenshots
 
 ## Landing Page
-<img width="1600" height="816" alt="WhatsApp Image 2026-07-23 at 12 00 53 AM" src="https://github.com/user-attachments/assets/5091bc86-b641-456c-bf71-db932140e8f8" />
+<img width="1600" height="808" alt="WhatsApp Image 2026-07-23 at 12 00 35 AM" src="https://github.com/user-attachments/assets/265698ff-9771-4ad1-8622-6aedeb420ecd" />
 
 ---
 
@@ -386,7 +386,7 @@ Example Response
 
 ## Prediction Result
 
-<img width="1600" height="808" alt="WhatsApp Image 2026-07-23 at 12 00 35 AM" src="https://github.com/user-attachments/assets/265698ff-9771-4ad1-8622-6aedeb420ecd" />
+
 ---
 
 # Features
