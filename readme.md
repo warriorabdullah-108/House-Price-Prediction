@@ -1,4 +1,3 @@
-<img width="602" height="145" alt="WhatsApp Image 2026-07-22 at 10 48 23 PM" src="https://github.com/user-attachments/assets/c38c6290-fdf3-4721-9dfa-da7d24246d5f" />
 # 🏡 House Price Estimator
 
 A full-stack Machine Learning web application that predicts residential property prices using a trained regression model.
@@ -191,6 +190,8 @@ The following regression models were evaluated:
 | Linear Regression | 1.18e9 | 2.17e11 | -3.06e8 |
 | Random Forest ⭐ | 9.20e5 | 3.24e6 | **0.9316** |
 | XGBoost | 1.76e6 | 4.15e6 | 0.8878 |
+<img width="602" height="145" alt="WhatsApp Image 2026-07-22 at 10 48 23 PM" src="https://github.com/user-attachments/assets/c38c6290-fdf3-4721-9dfa-da7d24246d5f" />
+
 
 ### Selected Model
 
