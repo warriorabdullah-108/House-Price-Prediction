@@ -2,6 +2,8 @@ import type { HealthResponse, PredictionRequest, PredictionResponse } from "../t
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+console.log("API URL =", BASE_URL);
+
 if (!BASE_URL) {
   // Fails loudly at build/dev time rather than silently hitting a relative URL.
   // eslint-disable-next-line no-console

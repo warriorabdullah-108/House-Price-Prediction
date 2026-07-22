@@ -14,8 +14,7 @@ class Settings(BaseSettings):
     locations_path: str = "models/locations.json"
 
     # Comma-separated in .env, e.g. "http://localhost:5173,http://127.0.0.1:5173"
-    cors_origins: str = "http://localhost:5173"
-
+    cors_origins: str = "http://localhost:5175,http://127.0.0.1:5175"
     log_level: str = "INFO"
 
     @property
