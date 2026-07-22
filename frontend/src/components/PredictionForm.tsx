@@ -209,19 +209,18 @@ export default function PredictionForm() {
           <label className="pf__label" htmlFor="bathroom">
             Bathrooms <sup>*</sup>
           </label>
-            <input
-              id="bathroom"
-              className="pf__control"
-              type="number"
-              min="0"
-              step="1"
-              inputMode="numeric"
-              placeholder="e.g. 2"
-              value={form.bathroom as unknown as string}
-              onChange={(e) => updateField("bathroom", e.target.value as unknown as number)}
-              aria-invalid={Boolean(errors.bathroom)}
-              aria-describedby="bathroom-error"
-            />
+          <input
+            id="bathroom"
+            className="pf__control"
+            type="number"
+            min="0"
+            step="1"
+            inputMode="numeric"
+            value={form.bathroom as unknown as string}
+            onChange={(e) => updateField("bathroom", e.target.value as unknown as number)}
+            aria-invalid={Boolean(errors.bathroom)}
+            aria-describedby="bathroom-error"
+          />
           <span className="pf__error" id="bathroom-error">
             {errors.bathroom ?? ""}
           </span>
@@ -231,19 +230,18 @@ export default function PredictionForm() {
           <label className="pf__label" htmlFor="balcony">
             Balconies <sup>*</sup>
           </label>
-            <input
-              id="balcony"
-              className="pf__control"
-              type="number"
-              min="0"
-              step="1"
-              inputMode="numeric"
-              placeholder="e.g. 1"
-              value={form.balcony as unknown as string}
-              onChange={(e) => updateField("balcony", e.target.value as unknown as number)}
-              aria-invalid={Boolean(errors.balcony)}
-              aria-describedby="balcony-error"
-            />
+          <input
+            id="balcony"
+            className="pf__control"
+            type="number"
+            min="0"
+            step="1"
+            inputMode="numeric"
+            value={form.balcony as unknown as string}
+            onChange={(e) => updateField("balcony", e.target.value as unknown as number)}
+            aria-invalid={Boolean(errors.balcony)}
+            aria-describedby="balcony-error"
+          />
           <span className="pf__error" id="balcony-error">
             {errors.balcony ?? ""}
           </span>

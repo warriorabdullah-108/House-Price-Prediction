@@ -1,1 +1,16 @@
-["Other", "agra", "ahmedabad", "aurangabad", "badlapur", "bangalore", "bhiwadi", "bhubaneswar", "chandigarh", "chennai", "coimbatore", "dehradun", "faridabad", "ghaziabad", "goa", "greater-noida", "guntur", "gurgaon", "guwahati", "hyderabad", "jaipur", "jamshedpur", "kalyan", "kanpur", "kochi", "kolkata", "lucknow", "mangalore", "mohali", "mumbai", "nagpur", "nashik", "navi-mumbai", "new-delhi", "noida", "palghar", "panchkula", "patna", "pune", "raipur", "ranchi", "siliguri", "sonipat", "surat", "thane", "thrissur", "vadodara", "varanasi", "vijayawada", "visakhapatnam", "zirakpur"]
+[
+  "Andheri, Mumbai",
+  "Bandra, Mumbai",
+  "Whitefield, Bangalore",
+  "Koramangala, Bangalore",
+  "Gachibowli, Hyderabad",
+  "Banjara Hills, Hyderabad",
+  "Sector 62, Noida",
+  "Dwarka, Delhi",
+  "Salt Lake, Kolkata",
+  "Wakad, Pune",
+  "Baner, Pune",
+  "Anna Nagar, Chennai",
+  "OMR, Chennai",
+  "other"
+]
