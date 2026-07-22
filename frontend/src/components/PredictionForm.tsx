@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PredictionForm.css";
-import { predictPrice } from "../api/predictionClient";
+import { predictPrice, fetchLocations } from "../api/predictionClient";
 
 export default function PredictionForm() {
   const [formData, setFormData] = useState({
@@ -15,8 +15,15 @@ export default function PredictionForm() {
     facing: "East",
   });
 
-  const [prediction, setPrediction] = useState<number | null>(null);
-  const [error, setError] = useState("");
+  useEffect(() => {
+  fetchLocations()
+    .then((data) => setLocations(data))
+    .catch((err) => console.error(err));
+}, []);
+
+ const [locations, setLocations] = useState<string[]>([]);
+const [prediction, setPrediction] = useState<number | null>(null);
+const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -71,8 +78,12 @@ setPrediction(result.predicted_price);
           required
         >
           <option value="">Select a location...</option>
-          <option value="location1">Location 1</option>
-          <option value="location2">Location 2</option>
+
+{locations.map((loc) => (
+  <option key={loc} value={loc}>
+    {loc}
+  </option>
+))}
         </select>
       </div>
 
@@ -129,60 +140,84 @@ setPrediction(result.predicted_price);
 
 
         <div className="form-group">
-          <label>Furnishing</label>
-          <select
-            name="furnishing"
-            value={formData.furnishing}
-            onChange={handleChange}
-          >
-            <option value="Unfurnished">Unfurnished</option>
-            <option value="Semi-Furnished">Semi-Furnished</option>
-            <option value="Furnished">Furnished</option>
-          </select>
-        </div>
+  <label>Furnishing</label>
+  <select
+    name="furnishing"
+    value={formData.furnishing}
+    onChange={handleChange}
+  >
+    {["Furnished", "Semi-Furnished", "Unfurnished"].map((item) => (
+      <option key={item} value={item}>
+        {item}
+      </option>
+    ))}
+  </select>
+</div>
 
 
         <div className="form-group">
-          <label>Transaction type</label>
-          <select
-            name="transactionType"
-            value={formData.transactionType}
-            onChange={handleChange}
-          >
-            <option value="Resale">Resale</option>
-            <option value="New Booking">New Booking</option>
-          </select>
-        </div>
+  <label>Transaction type</label>
+  <select
+    name="transactionType"
+    value={formData.transactionType}
+    onChange={handleChange}
+  >
+    {["New Property", "Resale"].map((item) => (
+      <option key={item} value={item}>
+        {item}
+      </option>
+    ))}
+  </select>
+</div>
+
+        <div className="form-group">
+  <label>Ownership</label>
+  <select
+    name="ownership"
+    value={formData.ownership}
+    onChange={handleChange}
+  >
+    {[
+      "Freehold",
+      "Leasehold",
+      "Co-operative Society",
+      "Power of Attorney",
+      "other",
+    ].map((item) => (
+      <option key={item} value={item}>
+        {item}
+      </option>
+    ))}
+  </select>
+</div>
 
 
         <div className="form-group">
-          <label>Ownership</label>
-          <select
-            name="ownership"
-            value={formData.ownership}
-            onChange={handleChange}
-          >
-            <option value="Freehold">Freehold</option>
-            <option value="Leasehold">Leasehold</option>
-          </select>
-        </div>
+  <label>Facing</label>
+  <select
+    name="facing"
+    value={formData.facing}
+    onChange={handleChange}
+  >
+    {[
+      "East",
+      "West",
+      "North",
+      "South",
+      "North-East",
+      "North-West",
+      "South-East",
+      "South-West",
+      "other",
+    ].map((item) => (
+      <option key={item} value={item}>
+        {item}
+      </option>
+    ))}
+  </select>
+</div>
 
-
-        <div className="form-group">
-          <label>Facing</label>
-          <select
-            name="facing"
-            value={formData.facing}
-            onChange={handleChange}
-          >
-            <option value="East">East</option>
-            <option value="West">West</option>
-            <option value="North">North</option>
-            <option value="South">South</option>
-          </select>
-        </div>
-
-      </div>
+</div>
 
 
       <button type="submit" className="submit-btn">
