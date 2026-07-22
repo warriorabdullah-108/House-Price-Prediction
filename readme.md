@@ -368,27 +368,25 @@ Example Response
 # Screenshots
 
 ## Landing Page
-
-![Landing Page](screenshots/home.png)
+<img width="1600" height="816" alt="WhatsApp Image 2026-07-23 at 12 00 53 AM" src="https://github.com/user-attachments/assets/5091bc86-b641-456c-bf71-db932140e8f8" />
 
 ---
 
 ## Prediction Form
 
-![Prediction Form](screenshots/form.png)
+<img width="1600" height="829" alt="WhatsApp Image 2026-07-23 at 12 02 49 AM" src="https://github.com/user-attachments/assets/337ae431-7441-46c6-9d69-d8f9ca912635" />
 
 ---
 
 ## Filled Form
+<img width="1600" height="764" alt="WhatsApp Image 2026-07-23 at 12 03 11 AM" src="https://github.com/user-attachments/assets/b59c6dac-0a07-4681-ae90-b551b007cbe1" />
 
-![Filled Form](screenshots/form-filled.png)
 
 ---
 
 ## Prediction Result
 
-![Prediction Result](screenshots/result.png)
-
+<img width="1600" height="808" alt="WhatsApp Image 2026-07-23 at 12 00 35 AM" src="https://github.com/user-attachments/assets/265698ff-9771-4ad1-8622-6aedeb420ecd" />
 ---
 
 # Features
