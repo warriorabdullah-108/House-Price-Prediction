@@ -1,14 +1,24 @@
 :root {
-  --ink: #ffffff;
-  --ink-soft: rgba(255, 255, 255, 0.8);
-  --parchment: rgba(255, 255, 255, 0.12);
-  --paper: rgba(255, 255, 255, 0.12);
-  --verdigris: #2f6f5e;
-  --verdigris-dark: #234f43;
-  --brass: #f4d35e;
-  --charcoal: #ffffff;
-  --rule: rgba(255, 255, 255, 0.2);
-  --danger: #ff6b6b;
+  /* Text */
+  --ink: #f3ede0; /* headings — warm cream */
+  --ink-soft: #c7c0ae; /* secondary text — muted warm gray */
+  --charcoal: #efe9dc; /* body text on dark surfaces */
+
+  /* Surfaces */
+  --bg-deep: #0a0e16;
+  --paper: rgba(20, 24, 34, 0.62); /* glass card surface */
+  --paper-solid: #12151f;
+  --rule: rgba(232, 199, 131, 0.18); /* hairline borders */
+
+  /* Accent (from the villa's warm lighting) */
+  --gold: #cda765;
+  --gold-bright: #e8c383;
+  --verdigris: #cda765; /* primary action — kept name for component compatibility */
+  --verdigris-dark: #a9834c;
+  --brass: #e8c383;
+
+  --danger: #ff8f76;
+  --danger-bg: rgba(255, 143, 118, 0.12);
 
   --font-display: "Fraunces", "Iowan Old Style", serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -29,14 +39,10 @@ body,
 
 body {
   margin: 0;
-  background-image: url("/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white;
+  color: var(--charcoal);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
 }
 
 a {
@@ -48,7 +54,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--verdigris);
+  outline: 2px solid var(--gold-bright);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -63,6 +69,32 @@ button {
   }
 }
 
+/* ---- Fixed background photo + dark scrim, shared by every page ---- */
+
+.bg-image {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 11, 18, 0.55) 0%,
+    rgba(8, 11, 18, 0.72) 45%,
+    rgba(8, 11, 18, 0.92) 100%
+  );
+}
+
+/* ---- App shell ---- */
+
 .app-shell {
   min-height: 100%;
   display: flex;
@@ -70,32 +102,34 @@ button {
 }
 
 .app-header {
-  padding: 1.75rem clamp(1.25rem, 5vw, 3rem) 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 1.5rem clamp(1.25rem, 5vw, 3rem);
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
 }
 
 .app-header__mark {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.35rem;
-  color: white;
+  font-size: 1.4rem;
   text-decoration: none;
-  letter-spacing: 0.01em;
+  line-height: 1;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--rule);
+  backdrop-filter: blur(6px);
+  transition: background 0.15s ease;
 }
 
-.app-header__mark span {
-  color: #fafafa;
-}
-
-.app-header__tag {
-  font-family: var(--font-mono);
-  font-size: 2rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255);
+.app-header__mark:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .app-main {
@@ -103,79 +137,64 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 6rem clamp(1.25rem, 5vw, 3rem) 3rem;
 }
 
 .app-footer {
   text-align: center;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,.7);
-  padding: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  padding: 1.25rem;
   font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 2;
 }
 
-/* ==========================
-   Glass Card
-========================== */
+/* ---- Glass panel shell (Estimate / Result / NotFound pages) ---- */
 
-.deed {
+.panel {
   width: 100%;
-  max-width: 700px;
-
-  background: rgba(255,255,255,0.12);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 20px;
-
-  box-shadow:
-    0 8px 32px rgba(0,0,0,.35),
-    inset 0 1px 1px rgba(255,255,255,.15);
-
-  position: relative;
+  max-width: 640px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.6);
   overflow: hidden;
 }
 
-.deed::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 14px;
-  pointer-events: none;
+.panel__header {
+  padding: 2.25rem 2.25rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-.deed__header {
-  padding: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
-
-.deed__eyebrow {
-  display: block;
-  margin-bottom: .6rem;
-
+.panel__eyebrow {
   font-family: var(--font-mono);
-  font-size: .75rem;
-  letter-spacing: .18em;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-
-  color: #ffd166;
+  color: var(--gold-bright);
+  display: block;
+  margin-bottom: 0.6rem;
 }
 
-.deed__title {
+.panel__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.panel__subtitle {
   margin: 0;
-  font-size: 2rem;
-  color: white;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
 }
 
-.deed__subtitle {
-  margin-top: .75rem;
-  color: rgba(255,255,255,.8);
-  line-height: 1.6;
-}
-
-.deed__body {
-  padding: 2rem;
+.panel__body {
+  padding: 1.85rem 2.25rem 2.25rem;
 }

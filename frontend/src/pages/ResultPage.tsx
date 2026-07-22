@@ -26,15 +26,16 @@ export default function ResultPage() {
   const { prediction, submitted } = state;
 
   return (
-    <div className="deed">
-      <div className="deed__header">
-        <h1 className="deed__title">Here's the estimate</h1>
-        <p className="deed__subtitle">
+    <div className="panel">
+      <div className="panel__header">
+        <span className="panel__eyebrow">Estimate No. 01 — Assessed</span>
+        <h1 className="panel__title">Here's the estimate</h1>
+        <p className="panel__subtitle">
           Based on the details you entered, the model's best estimate of market value is shown
           below.
         </p>
       </div>
-      <div className="deed__body">
+      <div className="panel__body">
         <div className="result__stamp-wrap">
           <div className="result__stamp">
             <span className="result__stamp-label">Assessed value</span>
@@ -86,8 +87,11 @@ export default function ResultPage() {
         </div>
 
         <div className="result__actions">
-          <Link className="result__link result__link--primary" to="/">
+          <Link className="result__link result__link--primary" to="/estimate">
             Estimate another property
+          </Link>
+          <Link className="result__link result__link--ghost" to="/">
+            Back home
           </Link>
         </div>
       </div>
