@@ -424,6 +424,8 @@ https://github.com/warriorabdullah-108/House-Price-Prediction
 
 https://github.com/khaled-magdy111/House-Price-Prediction
 
+https://github.com/hosnysohaila9-dev/House-Price-Prediction..git
+
 ---
 
 # License
